@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form</title>
+</head>
+<body>
+    <h2>Student Registration Form</h2>
+    <form onsubmit="result()">
+        <label>Name:</label><br><br>
+        <input type="text" id="name"><br><br>
+        <label>Email:</label><br><br>
+        <input type="email" id="email"><br><br>
+        <label>Address:</label><br><br>
+        <input type="text" id="address"><br><br>
+        <label>Phone:</label><br><br>
+        <input type="number" id="phone"><br><br>
+        <label>SSLC Percentage:</label><br><br>
+        <input type="number" id="sslc" step="0.01"><br><br>
+        <label>HSC Percentage:</label><br><br>
+        <input type="number" id="hsc" step="0.01"><br><br>
+        <label>HSC Group:</label><br><br>
+        <select id="hscgroup">
+            <option value="Biology">Biology</option>
+            <option value="CS">CS</option>
+            <option value="Commerce">Commerce</option>
+        </select><br><br>
+        <label>Is Student:</label>
+        <input type="checkbox" id="isstudent" value="Yes">
+        <label for="isstudent">Yes</label><br><br>
+        <label>Course:</label><br><br>
+        <select id="course">
+            <option value="AIML">AIML</option>
+            <option value="CSE">CSE</option>
+            <option value="ECE">ECE</option>
+            <option value="Civil">Civil</option>
+        </select><br><br>
+        <label>Gender:</label><br><br>
+        <input type="radio" id="male" name="gender" value="Male">
+        <label for="male">Male</label><br><br>
+        <input type="radio" id="female" name="gender" value="Female">
+        <label for="female">Female</label><br><br>
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+    </form>
+    <script>
+        function result(){
+            let name=document.getElementById("name").value;
+            let email=document.getElementById("email").value;
+            let address=document.getElementById("address").value;
+            let phone=document.getElementById("phone").value;
+            let sslc=parseFloat(document.getElementById("sslc").value);
+            let hsc=parseFloat(document.getElementById("hsc").value);
+            let hscgroup=document.getElementById("hscgroup").value;
+            let isstudent=document.getElementById("isstudent").checked;
+            let course=document.getElementById("course").value;
+            let gender=document.querySelector('input[name="gender"]:checked');
+            gender = gender ? gender.value : "Not specified";
+            alert("Form successfully submitted");
+        }
+    </script>
+    </body>
+</html>
